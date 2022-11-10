@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Componentes/Header/Header";
+import { Main } from "./appStyled";
+import Chatbox from "./Componentes/Chatbox/Chatbox";
+import Footer from "./Componentes/Footer/Footer";
+import { useState } from "react";
 
 function App() {
+  const [valor, setValor] = useState([]);
+  const [person, setPerson] = useState("Sal");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main>
+      <Header person={person} setPerson={setPerson} />
+      <Chatbox valor={valor} setValor={setValor} />
+      <Footer valor={valor} setValor={setValor} person={person} />
+    </Main>
   );
 }
 
